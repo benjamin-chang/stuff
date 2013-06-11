@@ -13,9 +13,11 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/nginx.vim'
 "Colors
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
+
 filetype plugin indent on  
 
 "ctrlp custom ignore 
@@ -68,3 +70,4 @@ colorscheme jellybeans
 syntax on
 "File associations
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead nginx.conf set ft=nginx
