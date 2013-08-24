@@ -59,6 +59,7 @@ if maparg('<C-L>', 'n') ==# '' "clear search
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
+set backspace=indent,eol,start
 set ignorecase
 set smartcase
 set hlsearch
