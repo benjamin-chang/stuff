@@ -1,4 +1,6 @@
 "Vundle managed
+" run the below command to install
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
