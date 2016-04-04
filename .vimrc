@@ -9,11 +9,13 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-ctrlspace/vim-ctrlspace'
 
 "Display sugar
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 
 "Syntax higlights
 Bundle 'vim-scripts/nginx.vim'
@@ -30,11 +32,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 
 Bundle 'vim-scripts/dbext.vim'
 "end Vundle
-
-"I want but don't know I want :)
-"Bundle 'Yggdroot/indentLine.git'
-"let g:indentLine_showFirstIndentLevel=0
-"let g:indentLine_char = '┊'
 
 "File associations
 filetype plugin indent on  
@@ -68,6 +65,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 "airline
 set laststatus=2 " Always display the statusline in all windows
 let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
 
 "Disable vim-markdown folding
 let g:vim_markdown_folding_disabled=1
@@ -95,6 +93,9 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,iso-8859-15
 set nobomb
+
+"ctrlspace
+set hidden
 
 "color scheme settings
 let g:solarized_termcolors=256
