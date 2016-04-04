@@ -13,8 +13,7 @@ Bundle 'Lokaltog/vim-easymotion'
 "Display sugar
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/powerline'
-"Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
 
 "Syntax higlights
 Bundle 'vim-scripts/nginx.vim'
@@ -66,19 +65,9 @@ let g:syntastic_check_on_wq = 0
 "let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-"powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
+"airline
 set laststatus=2 " Always display the statusline in all windows
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
+let g:airline_powerline_fonts = 1
 
 "Disable vim-markdown folding
 let g:vim_markdown_folding_disabled=1
@@ -111,4 +100,3 @@ set nobomb
 let g:solarized_termcolors=256
 set t_Co=256
 colorscheme jellybeans 
-"clint is the man
