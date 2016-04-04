@@ -10,6 +10,7 @@ Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'vim-ctrlspace/vim-ctrlspace'
+Bundle 'editorconfig/editorconfig-vim'
 
 "Display sugar
 Bundle 'Valloric/YouCompleteMe'
@@ -39,6 +40,9 @@ syntax enable
 autocmd BufNewFile,BufRead nginx.conf set ft=nginx
 autocmd BufNewFile,BufRead *.less set ft=css
 autocmd BufRead,BufNewFile *.es6 set ft=javascript
+
+"editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 "netrw tree style by default
 let g:netrw_liststyle=3
