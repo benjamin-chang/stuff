@@ -8,7 +8,7 @@
   env: 
     es6: true
     node: true
-  plugins: 
+  #plugins:  # can not be null
   globals: 
     document: false
     navigator: false
