@@ -23,6 +23,9 @@ set laststatus=2 " Always display the statusline in all windows
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
+"ctrlp custom ignore
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|build)$'
+
 "syntastic configurations 
 let g:syntastic_error_symbol='*'
 let g:syntastic_style_error_symbol='⚠'
