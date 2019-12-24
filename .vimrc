@@ -4,23 +4,24 @@
 " For other installations see https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nanotech/jellybeans.vim'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe'
+
+" Color Schemes
+Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'cocopon/iceberg.vim'
 
 " Syntax Highlighers
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-
 call plug#end()
 
 "airline
 set laststatus=2 " Always display the statusline in all windows
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1 "turn on when we install powerline fonts
 let g:airline_theme='powerlineish'
 
 "ctrlp custom ignore
