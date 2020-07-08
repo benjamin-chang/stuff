@@ -16,11 +16,19 @@ function custom_pwd {
   pwd | sed s:^$HOME:~: | sed 's:\(\.*[^/]\)[^/]*/:\1/:g'
 }
 
+function custom_node_ps1 {
+  # HACK: show node version when package.json or node_modules in cwd 
+  [[ -f package.json || -d node_modules ]] || return
+  node_version=$(nvm current 2>/dev/null)
+  #print "[%F{22}⬢%F{239} ${node_version}] "
+  print "[⬢ ${node_version}] "
+}
+
 GIT_PS1_SHOWDIRTYSTATE=1
 PS1='%B@%m:$(custom_pwd)%b $(custom_git_ps1)$ '
 
 # add timestamp at rear
-RPROMPT='%F{239}%D{%T}%f'$RPROMPT
+RPROMPT='%F{239}$(custom_node_ps1)[%D{%T}]%f'$RPROMPT
 
 # completion support 
 autoload -Uz compinit && compinit
