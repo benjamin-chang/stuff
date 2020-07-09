@@ -12,10 +12,6 @@ function custom_git_ps1 {
   print $__ps1 
 }
 
-function custom_pwd {
-  pwd | sed s:^$HOME:~: | sed 's:\(\.*[^/]\)[^/]*/:\1/:g'
-}
-
 function custom_node_ps1 {
   # HACK: show node version when package.json or node_modules in cwd 
   [[ -f package.json || -d node_modules ]] || return
@@ -24,11 +20,21 @@ function custom_node_ps1 {
   print "[⬢ ${node_version}] "
 }
 
+function custom_docker_ps1 {
+  [[ "$compose_exists" == true || -f Dockerfile || -f docker-compose.yml || -f /.dockerenv || -n $docker_context ]] || return
+  print "[🐳] "
+}
+
+function custom_pwd {
+  pwd | sed s:^$HOME:~: | sed 's:\(\.*[^/]\)[^/]*/:\1/:g'
+}
+
 GIT_PS1_SHOWDIRTYSTATE=1
+
 PS1='%B@%m:$(custom_pwd)%b $(custom_git_ps1)$ '
 
 # add timestamp at rear
-RPROMPT='%F{239}$(custom_node_ps1)[%D{%T}]%f'$RPROMPT
+RPROMPT='%F{239}$(custom_docker_ps1)$(custom_node_ps1)[%D{%T}]%f'$RPROMPT
 
 # completion support 
 autoload -Uz compinit && compinit
